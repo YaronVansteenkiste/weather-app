@@ -1,4 +1,4 @@
-![Preview](https://github.com/YaronVansteenkiste/weather-app/blob/master/preview/preview.png)
+![Preview](https://github.com/YaronVansteenkiste/weather-app/blob/master/images/preview.png)
 
 # weather-app
 
