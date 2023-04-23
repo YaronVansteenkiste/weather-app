@@ -1,3 +1,5 @@
+![Preview](https://github.com/YaronVansteenkiste/weather-app/blob/master/preview/preview.png)
+
 # weather-app
 
 This is a simple weather app that displays the current temperature and location based on user's geolocation or a searched location. It also provides a five-day weather forecast for the searched location.
