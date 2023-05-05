@@ -8,6 +8,7 @@
     <title>Weather App</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="./styles/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
     <script src="https://api.openweathermap.org/data/2.5/weather?q=London&appid=6f07e888433a7ac0d0fecb73ca6a0127"></script>
 </head>
 <body>
@@ -27,31 +28,27 @@
         <div class="weather-day-container">
             <div class="weather-day-item">
                 <p>Now</p>
-                <p id="temperature"></p>
+                <p id="temp0"></p>
             </div>
             <div class="weather-day-item">
-                <p>Now</p>
-                <p>19°</p>
-            </div class="weather-day-item">
-            <div class="weather-day-item">
-                <p>1pm</p>
-                <p>18°</p>
-            </div class="weather-day-item">
-            <div class="weather-day-item">
-                <p>2pm</p>
-                <p>16°</p>
-            </div class="weather-day-item">
-            <div class="weather-day-item">
-                <p>3pm</p>
-                <p>16°</p>
-            </div class="weather-day-item">
-            <div class="weather-day-item">
-                <p>4pm</p>
-                <p>16°</p>
+                <p>1 hour</p>
+                <p id="temp1"></p>
             </div>
             <div class="weather-day-item">
-                <p>5pm</p>
-                <p>13°</p>
+                <p>2 hours</p>
+                <p id="temp2"></p>
+            </div>
+            <div class="weather-day-item">
+                <p>3 hours</p>
+                <p id="temp3"></p>
+            </div>
+            <div class="weather-day-item">
+                <p>4 hours</p>
+                <p id="temp4"></p>
+            </div>
+            <div class="weather-day-item">
+                <p>5 hours</p>
+                <p id="temp5"></p>
             </div>
         </div>
         <div class="weather-week-container">
