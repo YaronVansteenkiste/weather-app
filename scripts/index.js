@@ -7,7 +7,7 @@ document.getElementById('search-bar').addEventListener('blur', () => {
 })
 
 function getWeatherData(latitude, longitude, locationName) {
-  const apiKey = '6f07e888433a7ac0d0fecb73ca6a0127';
+  const apiKey = '....';
   let url;
   if (latitude && longitude) {
     url = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
