@@ -18,8 +18,15 @@ hr {
     width: 90%;
 }
 
+footer {
+    padding: 10px 0px 10px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
 .application-container {
-    background-image: linear-gradient(to right top, #1e437c, #0074b0, #00a4b2, #00ce7c, #a8eb12);
+    background-image: linear-gradient(to right top, #3c68ab, #0074b0, #00a4b2, #00ce7c, #a8eb12);
     border-radius: 20px;
     width: 609px;
     margin: 10vh auto;
@@ -83,6 +90,7 @@ hr {
 
 .search-container {
     padding: 10px;
+    cursor: pointer;
 }
 
 

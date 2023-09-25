@@ -1,3 +1,5 @@
+const searchBar = document.getElementById("search-bar");
+
 document.getElementById('search-bar').addEventListener('focus', () => {
   document.getElementById('search-expand').classList.add('expand')
 })
@@ -7,7 +9,7 @@ document.getElementById('search-bar').addEventListener('blur', () => {
 })
 
 function getWeatherData(latitude, longitude, locationName) {
-  const apiKey = '....';
+  const apiKey = '6f07e888433a7ac0d0fecb73ca6a0127';
   let url;
   if (latitude && longitude) {
     url = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
@@ -20,17 +22,34 @@ function getWeatherData(latitude, longitude, locationName) {
       const weatherData = {
         temperature: data.list[0].main.temp,
         location: data.city.name,
+        temp_min: data.list[0].main.temp_min,
+        temp_max: data.list[0].main.temp_max,
+        pressure: data.list[0].main.pressure,
+        humidity: data.list[0].main.humidity,
+        feelslike: data.list[0].main.feels_like,
+        windspeed: data.list[0].wind.speed
       };
       return weatherData;
     });
 }
 
+
 function updateUI(weatherData) {
-  const temperature = document.querySelector("#temperature");
-  const location = document.querySelector("#location");
+  const temperature = document.getElementById("temperature");
+  const location = document.getElementById("location");
+  const tempRange = document.getElementById("temp0Range");
+  const pressure = document.getElementById("pressure");
+  const humidity = document.getElementById("humidity");
+  const feelsLike = document.getElementById("feelslike");
+  const wind = document.getElementById("wind")
 
   temperature.textContent = `${weatherData.temperature}°C`;
   location.textContent = weatherData.location;
+  pressure.textContent = `${weatherData.pressure} Pa`
+  tempRange.textContent = "Today " + weatherData.temp_min + " - " + weatherData.temp_max;
+  humidity.textContent = weatherData.humidity;
+  feelsLike.textContent = weatherData.feelslike;
+  wind.textContent = weatherData.windspeed + " km/h";
 }
 
 window.addEventListener("load", () => {
@@ -47,7 +66,6 @@ window.addEventListener("load", () => {
   });
 });
 
-const searchBar = document.querySelector("#search-bar");
 
 searchBar.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
@@ -77,22 +95,26 @@ searchBar.addEventListener("keypress", (event) => {
 });
 
 
-const searchInput = document.querySelector("#search-bar");
+const searchInput = document.getElementById("search-bar");
 const suggestionList = document.getElementById('suggestionList');
 
 const cities = [
+  'Aachen',
   'Antwerp',
+  'Amsterdam',
+  'Brussels',
+  'Berlin',
   'Mechelen',
   'Ghent',
   'Bruges',
   'Liège',
   'Namur',
-  'Amsterdam',
   'Paris',
   'London',
   'Berlin',
   'New York',
-  'Rome'
+  'Rome',
+  'Stockholm'
 ];
 
 function levenshteinDistance(a, b) {
@@ -118,7 +140,7 @@ function levenshteinDistance(a, b) {
       }
     }
   }
-  return matrix[b.length][a.length];
+  return matrix[b.length][a.length]
 }
 
 searchInput.addEventListener('keyup', () => {
