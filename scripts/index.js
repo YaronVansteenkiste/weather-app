@@ -42,7 +42,6 @@ function updateUI(weatherData) {
   const temperature = document.getElementById("temperature");
   const location = document.getElementById("location");
   const tempRange = document.getElementById("temp0Range");
-<<<<<<< HEAD
   const pressure = document.getElementById("pressure");
   const humidity = document.getElementById("humidity");
   const feelsLike = document.getElementById("feelslike");
@@ -55,12 +54,6 @@ function updateUI(weatherData) {
   humidity.textContent = weatherData.humidity;
   feelsLike.textContent = weatherData.feelslike;
   wind.textContent = weatherData.windspeed + " km/h";
-=======
-
-  temperature.textContent = `${weatherData.temperature}°C`;
-  location.textContent = weatherData.location;
-  tempRange.textContent = "Today " + weatherData.temp_min + " - " + weatherData.temp_max;
->>>>>>> 65565f504292d9703ca638655e21b52dd5c4b998
 }
 
 window.addEventListener("load", () => {
