@@ -20,7 +20,11 @@ hr {
 
 footer {
     padding: 10px 0px 10px;
+<<<<<<< HEAD
     background-color: black;
+=======
+    background-color: #1e437c;
+>>>>>>> 65565f504292d9703ca638655e21b52dd5c4b998
     color: white;
     text-align: center;
 }

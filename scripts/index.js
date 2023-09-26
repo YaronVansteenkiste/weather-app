@@ -23,11 +23,15 @@ function getWeatherData(latitude, longitude, locationName) {
         temperature: data.list[0].main.temp,
         location: data.city.name,
         temp_min: data.list[0].main.temp_min,
+<<<<<<< HEAD
         temp_max: data.list[0].main.temp_max,
         pressure: data.list[0].main.pressure,
         humidity: data.list[0].main.humidity,
         feelslike: data.list[0].main.feels_like,
         windspeed: data.list[0].wind.speed
+=======
+        temp_max: data.list[0].main.temp_max
+>>>>>>> 65565f504292d9703ca638655e21b52dd5c4b998
       };
       return weatherData;
     });
@@ -38,6 +42,7 @@ function updateUI(weatherData) {
   const temperature = document.getElementById("temperature");
   const location = document.getElementById("location");
   const tempRange = document.getElementById("temp0Range");
+<<<<<<< HEAD
   const pressure = document.getElementById("pressure");
   const humidity = document.getElementById("humidity");
   const feelsLike = document.getElementById("feelslike");
@@ -50,6 +55,12 @@ function updateUI(weatherData) {
   humidity.textContent = weatherData.humidity;
   feelsLike.textContent = weatherData.feelslike;
   wind.textContent = weatherData.windspeed + " km/h";
+=======
+
+  temperature.textContent = `${weatherData.temperature}°C`;
+  location.textContent = weatherData.location;
+  tempRange.textContent = "Today " + weatherData.temp_min + " - " + weatherData.temp_max;
+>>>>>>> 65565f504292d9703ca638655e21b52dd5c4b998
 }
 
 window.addEventListener("load", () => {
@@ -66,6 +77,10 @@ window.addEventListener("load", () => {
   });
 });
 
+<<<<<<< HEAD
+=======
+const searchBar = document.getElementById("search-bar");
+>>>>>>> 65565f504292d9703ca638655e21b52dd5c4b998
 
 searchBar.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
